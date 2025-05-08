@@ -38,8 +38,8 @@ class TaskFilter extends ConsumerWidget {
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           backgroundColor: isSelected
-              ? const Color.fromARGB(255, 30, 88, 104)
-              : const Color.fromARGB(155, 26, 60, 69),
+              ? Color(0xff111560)
+              : Colors.white,
           side: isSelected
               ? const BorderSide(color: Colors.white, width: 2)
               : null,
@@ -53,8 +53,8 @@ class TaskFilter extends ConsumerWidget {
           style: TextStyle(
               color: isSelected
                   ? Colors.white
-                  : const Color.fromARGB(255, 182, 178, 178),
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.w600),
+                  : Colors.black,
+              fontWeight: isSelected ? FontWeight.bold : FontWeight.w400),
         ),
       ),
     );

@@ -30,8 +30,15 @@ class TaskItem extends StatelessWidget {
           const SizedBox(height: 16),
           Row(
             children: [
-              Text(
-                _task.type.formmatedTaskType(),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  border: Border.all(color: Colors.grey)
+                ),
+                child: Text(
+                  _task.type.formmatedTaskType(),
+                ),
               ),
               const Spacer(),
               Text(

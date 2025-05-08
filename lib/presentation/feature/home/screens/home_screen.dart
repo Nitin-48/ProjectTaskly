@@ -80,10 +80,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Welcome to Taskly',
+        title: Text(
+          'Hello Nitin!',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
@@ -150,20 +150,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return Expanded(
       child: ListView.builder(
         itemCount: allTask.length,
-        itemBuilder: (ctx, index) => Dismissible(
-          background: Container(
-            color: Colors.red.withOpacity(0.5),
-          ),
-          onDismissed: (direction) {
-            homeStateNotifier.deleteTask(allTask[index]);
-          },
-          key: ValueKey(allTask[index].id),
-          child: InkWell(
-            onTap: () {
-              navigateToEditTask(context, allTask[index]);
+        itemBuilder: (ctx, index) => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Dismissible(
+            background: Container(
+              color: Colors.red.withOpacity(0.5),
+            ),
+            onDismissed: (direction) {
+              homeStateNotifier.deleteTask(allTask[index]);
             },
-            child: TaskItem(
-              allTask[index],
+            key: ValueKey(allTask[index].id),
+            child: InkWell(
+              onTap: () {
+                navigateToEditTask(context, allTask[index]);
+              },
+              child: TaskItem(
+                allTask[index],
+              ),
             ),
           ),
         ),
